@@ -1,0 +1,27 @@
+<h1>{{title}}</h1>
+
+<h2>{{myObject.nome}}</h2>
+<img src={{myImgUrl}} alt="My image">
+<hr />
+<input type="number" #myRef>
+
+
+
+<!-- Riferimento alla variabile -->
+
+<button (click)="mostraRef(myRef.value)">Mostra Value</button>
+
+<!-- Altro esempio -->
+<hr />
+<p #myPar>Testo del paragrafo</p>
+
+<button (click)="mostraRef(myPar.innerHTML)">Mostra innerHTML</button>
+<h3>Two-way data binding</h3>
+
+<input type="text" [(ngModel)]="myModel" />
+
+<button (click)="mostraModel()">Click</button>
+
+<p>{{myModel}}</p>
+
+<hr>
