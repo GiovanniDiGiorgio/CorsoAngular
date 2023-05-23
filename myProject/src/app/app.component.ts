@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MyInterface } from '../my-interface';
 
 @Component({
   selector: 'app-root',
@@ -32,7 +33,22 @@ export class AppComponent {
     { id: 3, nome: 'Giacomo', cognome: 'Bianchi', eta: 55 },
 
   ];
+  mySize = 12;
 
+  myCssClass = 'myBlue';
+
+  myClass = false;
+  myInterface: MyInterface = { nome: 'Aldo', cognome: 'Rossi', eta: 33 };
+
+  myInterfaces: MyInterface[] = [
+
+    { nome: 'Aldo', cognome: 'Rossi', eta: 33 },
+
+    { nome: 'Giovanni', cognome: 'Verdi', eta: 44 },
+
+    { nome: 'Giacomo', cognome: 'Bianchi', eta: 55 },
+
+  ];
   getMyNum() {
 
     return this.myNum;

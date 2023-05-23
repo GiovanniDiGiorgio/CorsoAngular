@@ -25,3 +25,119 @@
 <p>{{myModel}}</p>
 
 <hr>
+<h3>ngIf</h3>
+
+<input type="number" [(ngModel)]="myNum2" />
+
+<p *ngIf='myNum2>0'>Il valore doppio di {{myNum2}} è {{myNum2*2}}</p>
+
+<p *ngIf='myNum2<=0'>Non posso moltiplicare questo numero</p>
+
+<!-- A partire da Angular 4 anche: else -->
+
+<p *ngIf='myNum2>0; else myRefNgTemplate'>Il valore doppio di {{myNum2}} &egrave; {{myNum2*2}}</p>
+
+<ng-template #myRefNgTemplate>
+
+  <p>Non posso moltiplicare questo numero</p>
+
+</ng-template>
+
+<hr>
+[18:53] Ugo Betori
+
+
+
+
+<!-- Direttiva Strutturale ngFor -->
+
+<h3>ngFor</h3>
+
+<!-- Ciclo For di Array -->
+
+<ul>
+
+  <li *ngFor="let name of myNames; let i = index">{{i}} : {{name}}</li>
+
+</ul>
+
+<!-- Ciclo For di Oggetti -->
+
+<ol>
+
+  <li *ngFor="let obj of myObjects">{{obj.nome}} {{obj.cognome}} {{obj.eta}}</li>
+
+</ol>
+
+<hr>
+
+<!-- Direttiva Attributo ngStyle -->
+
+<h3>ngStyle</h3>
+
+<input type="color" #myCol />
+
+<input [(ngModel)]="mySize" type="range" />
+
+<p [ngStyle]="{'color': myCol.value, 'font-size': mySize+'px'}">
+
+  Testo con stile ngStyle
+
+</p>
+
+<hr>
+
+
+
+
+<!-- Direttiva Attributo ngClass -->
+
+<h3>ngClass</h3>
+
+<select [(ngModel)]="myCssClass">
+
+  <option value="myRed" selected>Red</option>
+
+  <option value="myBlue">Blue</option>
+
+</select>
+
+<div [ngClass]="myCssClass">
+
+  <h3>Titolo</h3>
+
+  <p>Testo con classe di stile ngClass</p>
+
+  <hr>
+
+</div>
+
+<p>{{myInterface.nome}} {{myInterface.cognome}} {{myInterface.eta}}</p>
+<table border="1">
+
+  <tr>
+
+    <td *ngFor="let interface of myInterfaces">{{interface.nome}} {{interface.cognome}} {{interface.eta}}</td>
+
+  </tr>
+
+</table>
+<table border="1">
+
+  <tr *ngFor="let interface of myInterfaces">
+
+    <td>{{interface.nome}}</td>
+
+    <td>{{interface.cognome}}</td>
+
+    <td>{{interface.eta}}</td>
+
+  </tr>
+
+</table>
+
+<hr>
+
+
+
+
