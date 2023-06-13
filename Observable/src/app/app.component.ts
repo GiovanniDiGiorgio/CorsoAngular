@@ -42,6 +42,27 @@ export class AppComponent {
     myObservableRange$ = range(9, 11);
 
     myObservableInterval$ = interval(1000);
+    mySubscriber!: Subscription;
+    myObserver: Observer<any> = {
+
+      next: value => console.log('Next: ' + value),
+
+      error: error => console.error('Error: ' + error),
+
+      complete: () => console.log('Complete!'),
+
+  };
+    mySubscription() {
+
+      this.mySubscriber = this.myObservableInterval$.subscribe(this.myObserver);
+
+  }
+
+  myUnsubscription() {
+
+      this.mySubscriber.unsubscribe();
+
+  }
     getCountries(code: string) {   
       
       ajax('https://restcountries.com/v3.1/all')
@@ -166,17 +187,17 @@ catchError(err=>of('F'))
   //cpstruttore-> ngOnInit()-> ngAfterWviewInit()
   ngOnInit() {
 
-    console.log("OnInit");        
+    // console.log("OnInit");        
 
-    this.mySubscribe();
+    //this.mySubscribe();
 
     //this.mySubscribeError();
 
-    //this.mySubscription();
+    // this.mySubscription();
 
     //this.myObservable$.subscribe(this.myObserver);        
 
-    this.getCountries('FRA');        
+    // this.getCountries('FRA');        
 
 }  
 }
