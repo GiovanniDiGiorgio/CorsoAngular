@@ -1,0 +1,39 @@
+<!-- Angular è dotato di un set di pipe: Date, UpperCase, LowerCase, Currency e Percentage, ecc. -->
+
+<p>Alto e basso: {{ testo | titlecase }}</p>
+
+<!-- Una pipe può accettare qualsiasi numero di parametri opzionali -->
+
+<p>Data di nascita: {{ miadata | date:'dd MMMM yyyy' | uppercase }}</p>
+
+<!-- Parametri con valori multipli: si separano i valori con i due punti.
+
+Nell'esempio la pipe di currency utilizza i parametri per la Valuta, il relativo Code e Min Int.Min decimal-Max decimal -->
+
+<p>Compenso orario: {{ prezzo | currency:'EUR':'symbol':'1.2-3' }}</p>
+
+<p>Crescita: {{ guadagno | percent }}</p>
+<!-- La pipe json ha scopo di supporto allo sviluppo -->
+
+<p>{{ jsonobject | json }}</p>
+
+<!-- La pipe keyvalue trasforma un oggetto o mappa in una serie di coppie di chiavi:valori -->
+
+<p *ngFor="let o of object | keyvalue">{{ o.key }}: {{o.value}}</p>
+
+<p *ngFor="let m of map | keyvalue">{{ m.key }}: {{m.value}}</p>
+
+<!-- La pipe slice crea un array o una stringa contenente un sottoinsieme degli elementi -->
+
+<ul>
+
+  <li *ngFor="let l of lista | slice:1:3">{{l}}</li>
+
+</ul>
+
+<p>{{ myObservable$ | async }}</p>
+<p>{{ testoPipeModel}}</p>
+
+<p>{{ stringa | myPipe:'Ciao' }}</p>
+
+<p *ngFor="let i of lista">{{i | translatePipe}}</p>

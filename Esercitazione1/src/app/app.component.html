@@ -1,0 +1,7 @@
+<h1>Nonno</h1>
+<p>{{title}}</p>
+
+<button (click)="cambia()">Cambia</button>
+
+<app-figlio1 [titolo1]="title" (Export)="funzioneImport($event)"></app-figlio1>
+<app-figlio2 [titolo2]="title" (export2)="funzioneImport($event)"></app-figlio2>

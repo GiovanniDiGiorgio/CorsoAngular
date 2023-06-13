@@ -1,0 +1,8 @@
+<form #myForm="ngForm" (ngSubmit)="Login()">
+  <input type="text" placeholder="username" #nome="ngModel" [(ngModel)]="User.nome" required name="nome"/>
+  <ng-container *ngIf="nome.invalid && (nome.dirty || nome.touched)">
+    <p *ngIf="nome.errors?.['required']">Il campo è obbligatorio</p>
+  </ng-container>
+  <input type="text" placeholder="password" #password="ngModel" [(ngModel)]="User.password" name="password"/>
+  <button type="submit">Login</button>
+</form>

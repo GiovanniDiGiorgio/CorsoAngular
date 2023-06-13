@@ -1,8 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\myProject"
+    "\\Esercitazione2",
+    "\\Esercitazione2\\src",
+    "\\Esercitazione2\\src\\app",
+    "\\Form",
+    "\\Form\\src",
+    "\\Form\\src\\app",
+    "\\giorno3\\src",
+    "\\giorno3\\src\\app",
+    "\\giorno3\\src\\app\\parent",
+    "\\giorno3\\src\\app\\parent\\child"
   ],
-  "SelectedNode": "\\myProject",
+  "SelectedNode": "\\Esercitazione2\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }
