@@ -3,23 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { OrologioComponent } from './orologio/orologio.component';
-import { MyServiceService } from './Servizi/my-service.service';
-import { ComponenteServizioComponent } from './componente-servizio/componente-servizio.component';
+import { ComponenteNewComponent } from './componenti/componente-new/componente-new.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrologioComponent,
-    ComponenteServizioComponent,
+    ComponenteNewComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
-  providers: [
-    MyServiceService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
